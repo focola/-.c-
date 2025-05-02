@@ -1,0 +1,37 @@
+# Project: œÓƒø1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o department.o appointment.o disease.o
+LINKOBJ  = main.o department.o appointment.o disease.o
+LIBS     = -L"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/lib" -L"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/include" -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/include" -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/c/C”Ô—‘±‡“Î»Ìº˛/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = œÓƒø1.exe
+CXXFLAGS = $(CXXINCS) -std=c99
+CFLAGS   = $(INCS) -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+department.o: department.c
+	$(CC) -c department.c -o department.o $(CFLAGS)
+
+appointment.o: appointment.c
+	$(CC) -c appointment.c -o appointment.o $(CFLAGS)
+
+disease.o: disease.c
+	$(CC) -c disease.c -o disease.o $(CFLAGS)
